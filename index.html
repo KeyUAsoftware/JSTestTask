@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <script src="js/models.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/phone_book.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+<body>
+    <div>
+        <label>Name: <input value="Some name" id="name" onkeyup="clearErorrs('name')"> <span id="name-error"></span></label>
+        <label>Phone: <input value="00-000-0000" id="phone" onkeyup="clearErorrs('phone')"> <span id="phone-error"></span></label>
+        <label>Email: <input value="l@l.com" id="email" onkeyup="clearErorrs('email')"> <span id="email-error"></span></label>
+        <button onclick="addToPhoneBook()">Add</button>
+    </div>
+    <br>
+    <br>
+    <table id="phone-book-table" align="center">
+        <thead>
+            <tr>
+                <th><input id="search-name" placeholder="Filter by name"></th>
+                <th><input id="search-phone" placeholder="Filter by phone"></th>
+                <th><input id="search-email" placeholder="Filter by email"></th>
+                <th><button onclick="searchRecords()">Filter</button></th>
+            </tr>
+            <tr>
+                <th>Name <input type="radio" name="order" value="name" checked onclick="changeSort()"></th>
+                <th>Phone <input type="radio" name="order" value="phone" onclick="changeSort()"></th>
+                <th>Email <input type="radio" name="order" value="email" onclick="changeSort()"></th>
+                <th>-</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>
